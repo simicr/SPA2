@@ -2,15 +2,15 @@ package com.company.sort;
 
 public class SelectionSort {
 
-    public static <T extends Comparable<T>> void sort(T  [] niz){
+    public static <T extends Comparable<T>> void sort(T[] arr) {
 
-        for(int i = 0; i < niz.length; i++ ){
-            T tmpMin = niz[i];
-            for(int j = i; j < niz.length; j++){
-                if( tmpMin.compareTo(niz[j]) > 0 )
-                    tmpMin = niz[j];
+        for (int i = 0; i < arr.length; i++) {
+            T tmpMin = arr[i];
+            for (int j = i; j < arr.length; j++) {
+                if (tmpMin.compareTo(arr[j]) > 0)
+                    tmpMin = arr[j];
             }
-            niz[i] = tmpMin;
+            arr[i] = tmpMin;
         }
 
     }
