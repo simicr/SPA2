@@ -4,12 +4,13 @@ public class Main {
     public static void main(String[] args) {
 
         Heap p = new Heap();
-        for (int i = 15; i >= 0; i--) {
-            Integer pom = 15 - i;
-            p.appendNew(pom);
+        int[] arr = {1,2,3,7,17,19,25,36,100};
+        for (int i = 0; i < arr.length; i++) {
+            p.appendNew(arr[i]);
         }
-        //p.appendNew(16);
-
         System.out.println(p);
+        p.deleteMax();
+        System.out.println(p);
+
     }
 }

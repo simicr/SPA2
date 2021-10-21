@@ -7,6 +7,7 @@ public class Heap {
 
     private final ArrayList<Integer> priority;
 
+    //public methods
     public Heap(int len) {
         this.priority = new ArrayList<>(len);
     }
@@ -22,6 +23,62 @@ public class Heap {
     public void appendNew(Integer newElem) {
         priority.add(newElem);
         fixOrder(priority.size() - 1);
+    }
+
+    public Integer deleteMax() {
+        if (isEmpty())
+            return null;
+
+        Integer max = maxElem();
+        swap(0, priority.size() - 1);
+        priority.remove(priority.size() - 1);
+        fixOrder();
+
+        return max;
+    }
+    public boolean isEmpty(){
+        return priority.size() == 0;
+    }
+    public Integer maxElem(){
+        return priority.get(0);
+    }
+    public int size(){
+        return priority.size();
+    }
+    //private methods
+    private void fixOrder() {
+        if (priority.size() == 0)
+            return;
+        int formerMin = 0;
+        int greaterSon = getGreaterSon(0);
+        boolean done = false;
+
+        while (greaterSon != -1 && !done) {
+            swap(formerMin, greaterSon);
+            formerMin = greaterSon;
+            greaterSon = getGreaterSon(formerMin);
+            done = priority.get(formerMin).compareTo(priority.get(greaterSon)) > 0;
+        }
+    }
+
+    private int getGreaterSon(int index) {
+        int len = priority.size();
+        int target1 = 2*index + 1;
+        int target2 = 2*index + 2;
+
+        if(target1 >= len && target2 >= len)
+            return -1;
+        if(target1 <=len && target2 >= len)
+            return target1;
+        if(target1 >= len && target2 <= len)
+            return  target2; // is this posible?
+
+        Integer son1 = priority.get(target1);
+        Integer son2 = priority.get(target2);
+
+        if(son1.compareTo(son2) > 0)
+            return target1;
+        return target2;
     }
 
     private void fixOrder(int indexS) {
