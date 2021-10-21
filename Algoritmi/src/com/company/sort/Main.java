@@ -17,7 +17,7 @@ public class Main {
         }
         System.out.println("Pre-sort");
         ispisi(ljudi);
-        BubbleSort.sort(ljudi);
+        ShellSort.sort(ljudi);
         System.out.println("Post-sort");
         ispisi(ljudi);
 
