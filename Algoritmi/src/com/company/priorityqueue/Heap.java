@@ -42,6 +42,17 @@ public class Heap {
     public Integer maxElem(){
         return priority.get(0);
     }
+    public Integer minElem(){
+        int lenght = priority.size();
+        int lastParent = (lenght - 2)/2;
+        Integer min = priority.get(lastParent+1);
+        for(int i = lastParent + 1; i < lenght; i++){
+            if(priority.get(i).compareTo(min) < 0){
+                min = priority.get(i);
+            }
+        }
+        return min;
+    }
     public int size(){
         return priority.size();
     }
@@ -70,8 +81,6 @@ public class Heap {
             return -1;
         if(target1 <=len && target2 >= len)
             return target1;
-        if(target1 >= len && target2 <= len)
-            return  target2; // is this posible?
 
         Integer son1 = priority.get(target1);
         Integer son2 = priority.get(target2);

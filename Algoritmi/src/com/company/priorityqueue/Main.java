@@ -11,6 +11,9 @@ public class Main {
         System.out.println(p);
         p.deleteMax();
         System.out.println(p);
+        Integer m = p.minElem();
+        System.out.println(m);
+
 
     }
 }
