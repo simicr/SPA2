@@ -15,7 +15,8 @@ List of algorithms:
 - Brute force sort
 - Shell sort with Ciuras gaps
 - Combsort
-
+- Quick sort
+- Heap sort
 
 List of Data Structures:
 - Priority queue via Heap

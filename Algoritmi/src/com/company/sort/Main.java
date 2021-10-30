@@ -17,7 +17,7 @@ public class Main {
         }
         System.out.println("Pre-sort");
         ispisi(ljudi);
-        Combsort.sort(ljudi);
+        QuickSort.sort(ljudi);
         System.out.println("Post-sort");
         ispisi(ljudi);
 
