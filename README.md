@@ -17,6 +17,11 @@ List of algorithms:
 - Combsort
 - Quick sort
 - Heap sort
+- Merge sort
+- Huffman encoding
+- BFS and DFS for binary tree
 
 List of Data Structures:
+- Binary tree
+- Binary search tree
 - Priority queue via Heap
